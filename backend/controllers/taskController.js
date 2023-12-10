@@ -11,43 +11,7 @@ const pool = new Pool({
   port: 5432,
 });
 
-// backend/controllers/taskController.js
-// ...
 
-// exports.getAllTasks = async (req, res) => {
-//   try {
-//     let query = 'SELECT tasks.*, projects.projectName FROM tasks LEFT JOIN projects ON tasks.projectId = projects.id';
-
-//     // If projectId is provided in the query parameters, filter tasks for that project
-//     if (req.query.projectId) {
-//       query += ` WHERE tasks.projectId = ${req.query.projectId}`;
-//     }
-
-//     const result = await pool.query(query);
-//     const tasks = result.rows;
-//     res.json(tasks);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// };
-// exports.getAllTasks = async (req, res) => {
-//   try {
-//     let query = 'SELECT tasks.*, projects.projectName FROM tasks LEFT JOIN projects ON tasks.projectId = projects.id';
-
-//     // If projectId is provided in the query parameters, filter tasks for that project
-//     if (req.query.projectId) {
-//       query += ` WHERE tasks.projectId = ${req.query.projectId}`;
-//     }
-
-//     const result = await pool.query(query);
-//     const tasks = result.rows;
-//     res.json(tasks);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// };
 exports.getAllTasks = async (req, res) => {
   try {
     let query = 'SELECT tasks.*, projects.projectName FROM tasks LEFT JOIN projects ON tasks.projectId = projects.id';
